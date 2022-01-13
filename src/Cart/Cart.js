@@ -72,7 +72,9 @@ const Cart = () => {
         console.log("Temp array is:", temp);
         addtoorderbuyuser({orderlist:temp,userid:user._id})
         setTimeout(() => {
-            window.location.href = "/ordered"
+            // window.location.href = "/ordered"
+            navigate('/ordered')
+
         }, 1000);
         //addDataToDb({...user, order: temp});
     }

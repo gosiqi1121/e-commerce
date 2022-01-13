@@ -13,7 +13,9 @@ const SignBar = () => {
     const [user, setUser] = useState({})
     const navigate = useNavigate()
     const getUser = () => {
-        fetch('https://node-on-shop.herokuapp.com/api/profile', {
+        let APIURL = 'https://node-on-shop.herokuapp.com'
+        // let APIURL = 'http://localhost:4000'
+        fetch(APIURL + '/api/profile', {
             method: 'POST',
             credentials: 'include'
         }).then(res => res.json())
