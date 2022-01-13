@@ -1,6 +1,6 @@
 import React from "react";
 import {useState,useEffect} from "react";
-import {Link, useNavigate,useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 
 const SearchScreen = ()=>{
@@ -8,10 +8,10 @@ const SearchScreen = ()=>{
     const productTitle= params.searchTerm;
     const[searchTerm,setSearchTerm] = useState(productTitle);
     const[results,setResults] = useState([]);
-    const navigate = useNavigate();
+
 
     const findProduct = () =>
-        navigate(`/${searchTerm}`)
+
         fetch(`https://fakestoreapi.com/products/category/${searchTerm}`)
             .then(res => res.json())
             .then(results=>setResults(results))
